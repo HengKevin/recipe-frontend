@@ -5,6 +5,6 @@ const cache = new InMemoryCache();
 
 export const apolloClient = new ApolloClient({
   // You should use an absolute URL here
-  uri: "http://localhost:3000/graphql",
+  uri: "https://back-recipe.herokuapp.com/",
   cache,
 });
