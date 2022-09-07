@@ -13,7 +13,8 @@ const AUTH_TOKEN = "apollo-token";
 
 // Http endpoint
 const httpEndpoint =
-  process.env.VUE_APP_GRAPHQL_HTTP || "http://localhost:3000/graphql";
+  process.env.VUE_APP_GRAPHQL_HTTP ||
+  "https://back-recipe.herokuapp.com/graphql";
 
 // Config
 const defaultOptions = {
