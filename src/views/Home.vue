@@ -3,17 +3,14 @@
     <v-card
       class="mx-auto my-12"
       color="white lighten-4"
-      width="500"
-      max-width="500"
+      width="450"
+      max-width="450"
       v-for="recipe in recipes"
       :key="recipe.id"
       @click="navigate(recipe.id)"
     >
       <v-img :aspect-ratio="16 / 9" :src="recipe.imageUrl"> </v-img>
       <v-card-text class="pt-6" style="position: relative">
-        <v-btn absolute color="red" class="white--text" fab large right top>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
         <div class="font-weight-light grey--text text-h6 mb-2">
           For the perfect meal
         </div>

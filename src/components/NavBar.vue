@@ -5,9 +5,11 @@
         >Nanjime</v-toolbar-title
       >
       <v-spacer class="hidden-sm-and-down"></v-spacer>
-      <v-btn class="hidden-sm-and-down" @click="home">HOME</v-btn>
+      <v-btn class="hidden-sm-and-down" color="#D61C4E" @click="home"
+        >HOME</v-btn
+      >
       <v-btn
-        color="green lighten-3"
+        color="yellow darken-3"
         class="hidden-sm-and-down ml-5"
         @click="add"
         >ADD RECIPE</v-btn
