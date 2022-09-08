@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { getRecipes } from "../graphql/queries";
+import { recipes } from "../graphql/queries";
 
 export default {
   name: "Home",
@@ -40,12 +40,13 @@ export default {
     };
   },
   methods: {
-    test: async function () {
-      // Call to the graphql mutation
+    getRecipes: async function () {
       const result = await this.$apollo.query({
-        query: getRecipes,
+        query: recipes,
+        fetchPolicy: "no-cache",
       });
       this.recipes = result.data.recipes;
+      console.log(result.data.recipes);
     },
 
     navigate: function (recipeId) {
@@ -53,11 +54,8 @@ export default {
       this.$router.push({ name: "Recipe", params: { id: recipe } });
     },
   },
-  activated() {
-    this.test();
-  },
   async mounted() {
-    await this.test();
+    await this.getRecipes();
   },
 };
 </script>

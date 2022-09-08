@@ -9,17 +9,17 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 Vue.config.productionTip = false;
-Vue.use(VueApollo)
-Vue.use(VueRouter)
+Vue.use(VueApollo);
+Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: Routes,
   mode: "history",
-})
+});
 
 const apolloProvider = new VueApollo({
   defaultClient: createProvider().defaultClient,
-})
+});
 
 new Vue({
   router: router,

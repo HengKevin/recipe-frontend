@@ -89,6 +89,7 @@
 
 <script>
 import { createRecipe } from "../graphql/mutations";
+import { recipes } from "../graphql/queries";
 
 export default {
   name: "Recipe",
@@ -129,13 +130,18 @@ export default {
             ingredients: this.recipe.ingredients,
           },
         },
+        update: (cache, { data: { newRecipe } }) => {
+          let data = cache.readQuery({ query: recipes });
+          data = {
+            ...data,
+            ...newRecipe,
+          };
+          cache.writeQuery({ query: recipes, data });
+        },
       });
       console.log("data object", result.data);
       this.$router.push({ name: "Home" });
     },
-  },
-  mounted() {
-    this.getOne(this.$route.params.id);
   },
 };
 </script>

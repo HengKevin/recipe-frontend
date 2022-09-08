@@ -17,5 +17,5 @@ export default [
     path: "/recipe/:id",
     name: "Recipe",
     component: Recipe,
-  }
+  },
 ];

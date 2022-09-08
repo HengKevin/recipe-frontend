@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const getRecipes = gql`
+export const recipes = gql`
   query {
     recipes {
       id
@@ -13,7 +13,7 @@ export const getRecipes = gql`
   }
 `;
 
-export const getRecipe = gql`
+export const recipe = gql`
   query ($id: Int!) {
     recipe(id: $id) {
       id

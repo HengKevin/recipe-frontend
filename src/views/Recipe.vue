@@ -8,9 +8,9 @@
           class="mx-6 my-6"
         ></v-img>
         <v-card-title>
-          <h3 class="text-h1 font-weight-bold blue--text mb-2">
+          <h1 class="text-h3 font-weight-bold blue--text mb-2">
             {{ recipe.name }}
-          </h3>
+          </h1>
           <v-spacer></v-spacer>
           <v-btn color="red" class="white--text" @click="removeRecipe"
             >Delete</v-btn
@@ -37,7 +37,7 @@
 
 <script>
 import { removeRecipe } from "../graphql/mutations";
-import { getRecipe } from "../graphql/queries";
+import { recipe } from "../graphql/queries";
 export default {
   name: "Recipe",
   data() {
@@ -51,9 +51,8 @@ export default {
   },
   methods: {
     getRecipe: async function () {
-      // Call to the graphql mutation
       const result = await this.$apollo.query({
-        query: getRecipe,
+        query: recipe,
         variables: {
           id: Number(this.id),
         },
